@@ -8,5 +8,9 @@ for i in range(case):
     for j in range(len(arr)):
         dp[arr[j]] += 1
     maxCount = max(dp)
-    result = max(i for i,count in enumerate(dp) if dp[i] == maxCount)
+    filterArr =[]
+    for x,count in enumerate(dp):
+        if dp[x] == maxCount:
+            filterArr.append(x)
+    result = max(filterArr)
     print(f"#{tn} {result}")
